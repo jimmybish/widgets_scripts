@@ -1,0 +1,188 @@
+/*
+v0.1 / 02/11/17 - James Bishop - Initial Build
+v0.2 / 03/11/17 - James Bishop - Populate component list, add animation
+v0.3 / 06/11/17 - James Bishop - Add the ability to close/ hide the widget, further formatting, and handling of "Under Maintenance"
+					Initial release to Production and commit to SVN
+v0.4 / 08/11/17 - James Bishop - Almost complete rewrite to move the widget to the left of screen. Show all statuses at all times.
+v1.0 / 18/12/17 - James Bishop - Reverted back to 0.3 codebase to move widget back to the bottom. Simplified logic and removed the ability to
+					close and hide the widget. Also moved slideup/slidedown functionality to pure CSS. Coincides with the movement of the 
+					feedback widget to the same location (edited style.css .innovation classes)
+v1.1 / 20/12/17 - James Bishop - Add transparent div, like a modal background, when either widget is expanded. Click anywhere (on the div) to shrink the widgets back down.
+v1.2 / 20/12/17 - James Bishop - Display number of active incidents in the List Header
+*/
+					
+/* StatusPage Widget */
+#statuscontainer {
+	width: 260px;
+	position: fixed;
+	bottom: 0px;
+	right: 70px;
+	z-index: 1041;
+	box-shadow: 1px 3px 5px rgba(0,0,0,.25);
+	border-radius: 10px 10px 0px 0px;
+	-webkit-transform: translate(0px,505px);
+    transform: translate(0px,505px);
+    transition: all .3s;
+}
+
+#statuscontainer.active {
+	-webkit-transform: translate(0px,0px);
+    transform: translate(0px,0px);
+    transition: all .3s;
+}
+
+
+/* Header elements */
+#statusheader {
+	background-color: #006db9;
+	width: 260px;
+	height: 30px;
+	cursor: pointer;
+	vertical-align: middle;
+	text-align: center;
+	padding-top: 4px;
+	padding-left: 4px;
+	border-radius: 10px 10px 0px 0px;
+	line-height: 0px;
+}
+
+#statusheader h4 {
+    color: #fff !important;
+    letter-spacing: .2em;
+    font-size: 12px;
+    font-weight: bold;
+	-webkit-margin-before: 0.2em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+	position: absolute;
+	top: -6px;
+}
+
+#heading-dot:before {
+	content: '\25CF';
+	font-size: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+/* Heading Colour based on status */
+
+#heading-dot.critical {
+	color: #e74c3c;
+}
+
+#heading-dot.major  {
+	color: #e67e22;
+}
+
+#heading-dot.minor {
+    color: #f1c40f;
+}
+
+#heading-dot.maintenance {
+	color: #3498db;
+}
+
+#heading-dot.none {
+    color: #2ecc71;
+}
+
+/* List elements */
+#statuslist {
+	width: 260px;
+	max-height: 500px;
+	bottom: 0px;
+	height: fit-content;
+	padding-bottom: 5px;
+	background: #fbfdff;
+	overflow-y: scroll;
+}
+
+#listheading {
+	min-width: 220px;	
+	background: #e5e7ea;
+	padding-top:5px;
+	padding-bottom:5px;
+	font-size: 14px;
+	vertical-align: middle;
+	text-align: center;
+	color: #333;
+}
+
+#listheading.incident {
+	cursor: pointer;
+	color: red;
+	font-weight: 600;
+}
+
+.listitem {
+	cursor: pointer;
+	text-align: left;
+	padding-bottom: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.listitem:hover {
+	background: #e5e7ea;
+}
+
+.component-heading {
+	font-size: 13.5px;
+	font-weight: bold;
+	font-family: 'Roboto', Helvetica, Arial, "Lucida Grande", sans-serif;
+	color: #333;
+}
+
+.component-body {
+	font-size: 11px;
+	display: block;
+	color: #666;
+	font-family: 'Roboto', Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+
+#statuslist a {
+	text-decoration: none;
+	color: #2196F3;
+}
+
+/* Component dot colour based on status*/
+.component-dot:before {
+	content: ' \25CF';
+	font-size: 15px;
+	margin-left: 5px;
+	margin-right: 5px;
+
+}
+
+.component-dot.major_outage {
+    color: #e74c3c;
+}
+
+.component-dot.partial_outage  {
+	color: #e67e22;
+}
+
+.component-dot.degraded_performance {
+    color: #f1c40f;
+}
+
+.component-dot.under_maintenance {
+	color: #3498db;
+}
+
+.component-dot.operational {
+    color: #2ecc71;
+}
+
+.transparentback {
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+	opacity: 0;
+}
