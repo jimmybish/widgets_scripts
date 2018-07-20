@@ -1,0 +1,23 @@
+<!-- My personal API Key: AIzaSyAdzGZ7Raf3t1Ng5Fmm36qfV09BicpAiOs - It's read-only & IP limited, so can appear client-side
+-->
+
+<html lang="ar" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdzGZ7Raf3t1Ng5Fmm36qfV09BicpAiOs&libraries=places"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="distance_calc.js"></script>
+	<link type="text/css" rel="Stylesheet" href="style.css">
+</head>
+<body>
+	<div id="topofpage">
+		<div id="header">
+			Distance Calculator
+		</div>
+	</div>
+	<input id="searchTextField" type="text" size="50" placeholder="Search Address">
+	<input type="hidden" id="addLat"></input>
+	<input type="hidden" id="addLng"></input>
+	<table id="depotList">
+	</table>
+</body>
