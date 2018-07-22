@@ -1,0 +1,58 @@
+body {
+    padding: 10px;
+    background-color: black;
+}
+
+#head {
+    position: relative;
+    left: 0px;
+    color: white;
+    font-size: 400%;
+    height: 20%;
+    width: 100%;
+    text-align: center;
+}
+
+#errors {
+    position: relative;
+    color: white;
+    text-align: center;
+    vertical-align: top;
+}
+
+.errors {
+    display: inline-block;
+    width: 100%;
+    color: white;
+    font-size: 200%;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.container {
+    position: relative;
+    border-bottom: 5px solid black;
+}
+
+.CRITICAL {
+    background-color: #9e1412;
+    color: white;
+}
+
+.WARNING {
+    background-color: yellow;
+    color: black;
+}
+
+.hostname {
+    font-size: 50px;
+    text-align: left;
+    padding-right: 10px;
+}
+
+.info {
+    font-size: 30px;
+    text-align: right;
+    padding-left: 10px;
+}
