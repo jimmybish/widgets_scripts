@@ -1,0 +1,47 @@
+body {
+    padding: 10px;
+    background-color: #9e1412;
+}
+
+#head {
+    position: absolute;
+    left: 0px;
+    color: white;
+    font-size: 600%;
+    height: 30%;
+    width: 70%;
+    text-align: center;
+}
+
+#unhandled {
+    position: absolute;
+    left: 0px;
+    color: white;
+    font-size: 4000%;
+    height: 30%;
+    width: 70%;
+    text-align: center;
+
+}
+
+#separator {
+
+}
+
+#list {
+    position: absolute;
+    right: 0px;
+    padding: 20px;
+    color: white;
+    font-size: 200%;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width:100%;
+    text-align: center;
+    color: white;
+    height:50px;
+    font-size: 200%;
+}
