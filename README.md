@@ -28,7 +28,12 @@ Javascript, PHP, CSS
 
 A simple slideUp widget showing a quick overview of the component statuses from StatusPage. Ideal of an Intranet environment since it refreshes using a scheduled php task, not from every end-user's browser. 
 
-# /migrate-server.ps1
+# migrate-server.ps1
 PowerShell
 
 This is a script to copy a number of settings from one server to another, useful for migrating to new operating systems or building multiple servers with the same configuration. This includes local admin accounts (using an Active Directory group), Remote Desktop users, the computer object's group membership, and the OU the computer object belongs in.
+
+# process-killer.ps1
+PowerShell
+
+Users in a company have lost Administrator permissions, but have a method of "elevating" certain executables to admin level in order to complete tasks. Windows Tasks Manager, unfortunately, isn't one of those executables - leaving certain users unable to kill process when needed. This script was knocked up in 30 mins to help them out.
